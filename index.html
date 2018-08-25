@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+    
+    #Header{
+    position: absolute;
+    display: initial;
+    top: 4vh;
+    left: 26vw;
+    }
+    #Slogan{
+    position: absolute;
+    display: initial;
+    top: 23vh;
+    left: 37vw;
+    width: 170px;
+    height: 80px;
+    }
+    #phoneNumber{
+    position: absolute;
+    display: initial;
+    top: 36vh;
+    left: 30vw;
+    width: 400px;
+    height: 50px;
+    outline: black;
+    outline-color: black;
+    font-size: 30px;
+    }
+    #lat{
+    position: absolute;
+    display: initial;
+    top: 45vh;
+    left: 30vw;
+    width: 400px;
+    height: 50px;
+    outline: black;
+    outline-color: black;
+    font-size: 30px;
+    }
+    #long{
+    position: absolute;
+    display: initial;
+    top: 54vh;
+    left: 30vw;
+    width: 400px;
+    height: 50px;
+    outline: black;
+    outline-color: black;
+    font-size: 30px;
+    }
+    #submit{
+    position: absolute;
+    display: initial;
+    top: 70vh;
+    left: 30vw;
+    width: 400px;
+    height: 50px;
+    font-size: 40px;    
+    }
+    #link{
+    position: absolute;
+    display: initial;
+    top: 80vh;
+    left: 25vw;
+    font-size: 30px;
+    }
+    
+
+    </style>
+  </head>
+  <body>
+  
+  
+    <img src="https://github.com/YnotCode/RainSmart/blob/master/RainsmartLog.png?raw=true" id="Header"/>
+    <img src="https://github.com/YnotCode/RainSmart/blob/master/RainSmart%20Sign%20Up.png?raw=true" id="Slogan"/>
+    <input type="text" id="phoneNumber" placeholder="Phone Number"/> 
+    <input type="text" id= "lat" placeholder= "Latitude of your location"/>
+    <input type="text" id="long" placeholder= "Longitude of your location"/>
+   
+    <button id="submit" onclick="signUp()">CREATE ACCOUNT</button>
+    <a target="_blank" id="link" href="https://www.latlong.net/"> Don't Know Latitude and Longitude? Click Here! </a>
+    
+    
+    <script>
+    
+    
+    function signUp(){
+    var number = document.getElementById("phoneNumber").value;
+    var lat = document.getElementById("lat").value;
+    var lon = document.getElementById("long").value;
+    
+    google.script.run.main("sign", number, lat, lon);
+    
+    
+    }
+    
+    
+    
+    
+   /* function Geocode(){
+    var location = document.getElementById("ad").value;
+    google.script.run.withFailureHandler(function(err){
+   
+    console.log(err);
+    document.getElementById("Slogan").innerHTML = "Error. Invalid Location";
+    
+    }).withSuccessHandler(function(res){
+    
+    
+    var latitude = res[0];
+    var longitude = res[1];
+    var num = document.getElementById("phone Number").value;
+    signUp(num, latitude, longitude);
+    
+    }).main("geocode",location, 0, 0);
+    
+    
+    
+    
+    } */
+    
+    
+    
+    
+    
+    
+    </script>
+  </body>
+</html>
+
